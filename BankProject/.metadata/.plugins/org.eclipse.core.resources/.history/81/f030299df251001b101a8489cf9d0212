@@ -1,0 +1,76 @@
+package com.dutybank.dao.Impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.dutybank.dao.LogInCrudDAO;
+import com.dutybank.dao.dbutil.PostgresqlConnection;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.UserLogIn;
+
+public class LogInCrudDAOImpl implements LogInCrudDAO {
+
+	@Override
+	public int createUser(UserLogIn user) throws BusinessException {
+		// TODO Auto-generated method stub
+		// This is for sign up a new user
+		int conn = 0;
+		try (Connection connection = PostgresqlConnection.getConnection()) {
+			String sql = "insert into dutybank.login (user_id, email, password, creation_date) values(?, ?, ?, ?)";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setInt(1, user.getUser_id());
+			preparedStatement.setString(2, user.getEmail());
+			preparedStatement.setString(3, user.getPassword());
+			preparedStatement.setDate(4, new java.sql.Date(user.getCreation_date().getTime()));
+			
+			conn = preparedStatement.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e); // Take off when app is live
+			throw new BusinessException("Internal Error Ocurred...");
+		}
+		return conn;
+	}
+
+	@Override  // If email does not exist -> validation. Same for password
+	public UserLogIn retrieveUser(String email) throws ClassNotFoundException, SQLException, BusinessException {
+		// TODO Auto-generated method stub
+		UserLogIn user = null;
+		Connection connection = PostgresqlConnection.getConnection();
+		String sql = "select user_id, email, password, creation_date from dutybank.login where email=?";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setString(1, user.getEmail());
+		ResultSet resultSet = preparedStatement.executeQuery();
+		
+		if (resultSet.next()) {
+			user = new UserLogIn();
+			user.setUser_id(resultSet.getInt("user_id"));
+			user.setEmail(email);
+			user.setPassword(resultSet.getString("password"));
+			
+		} else {
+			throw new BusinessException("Some Internal Error Ocurred!");
+		}
+		
+		return user;
+		
+	}
+
+	@Override
+	public int updateUserData(int user_id, String email, String password) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deleteUser(int user_id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

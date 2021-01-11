@@ -1,0 +1,5 @@
+1610201070001	Rename type 'Client'
+1610201149216	Rename type 'BankAccounts'
+1610204678358	Encapsulate field 'clientcontact'
+1610206068749	Rename type 'Main'
+1610211746364	Rename type 'UserLogInLogic'

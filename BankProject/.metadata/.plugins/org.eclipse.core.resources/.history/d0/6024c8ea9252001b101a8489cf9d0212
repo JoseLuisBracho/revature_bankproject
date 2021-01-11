@@ -1,0 +1,5 @@
+package com.dutybank.utils;
+
+public interface MenusDutyBank {
+
+}

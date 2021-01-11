@@ -1,0 +1,171 @@
+package com.dutybank;
+
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.Scanner;
+
+import com.dutybank.dao.LogInCrudDAO;
+import com.dutybank.dao.Impl.LogInCrudDAOImpl;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.logic.LogInCrudLogic;
+import com.dutybank.logic.Impl.LogInCrudLogicImpl;
+import com.dutybank.model.UserLogIn;
+import com.dutybank.utils.MenusDutyBank;
+
+public class MainDutyBank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		LogInCrudLogic log = new LogInCrudLogicImpl();
+		
+		int enter = 0;
+		int entclient = 0;
+		login.menuShow();
+		
+		do {
+			System.out.println("Please type your option");
+			enter = Integer.parseInt(sc.nextLine());
+			
+			switch (enter) {
+			case 1:
+				try {
+					System.out.println("Enter your email");
+					String email = sc.nextLine();
+					System.out.println("Enter your password");
+					String password = sc.nextLine();
+					
+					try {
+						UserLogIn user = log.retrieveUser(email);
+						System.out.println("Este es el pass : "+user.getPassword());
+						if (user!=null && password == user.getPassword()) {
+							System.out.println("User found with " + email + " details of the client are :");
+							System.out.println(user);
+						} else {
+							throw new BusinessException("Invalid password, try again");
+						}
+					} catch (BusinessException e) {
+						System.out.println(e.getMessage());
+						login.menuShow();
+					}
+					
+				} catch (NumberFormatException e) {
+					System.out.println("Only a number between 1 - 3 is allowed, try again");
+				}
+				break;
+
+			default:
+				break;
+			}
+			
+		} while (enter!=3);
+	
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		switch (entclient) {
+		case 1:
+			do {
+				client.menuShow();
+				System.out.println("Please choose your option");
+				entclient = Integer.parseInt(sc.nextLine());
+				System.out.println("you pressed"+entclient);
+			} while (entclient!=7);
+			
+			
+			break;
+			
+		case 2:
+			officer.menuShow();
+			
+			break;
+			
+
+		default:
+			System.out.println("Invalid Menu Option...Please try again");
+			break;
+		}
+	
+	}
+	
+	static MenusDutyBank login = () -> {
+		printDB();
+		System.out.println("\nWelcome to DutyBank Management System");
+		System.out.println("\n\n********************** LOG IN ****************************");
+		System.out.println("****************** Select your Option ********************");
+		System.out.println("\n     1. Log In");
+		System.out.println("     2. Sign Up");
+		System.out.println("     3. EXIT");
+	};
+	
+	static MenusDutyBank client = () -> {
+		printDB();
+		System.out.println("\n************* DutyBank Client Options Menu ***************");
+		System.out.println("\n     1. Open a New Account");
+		System.out.println("     2. Deposit Money");
+		System.out.println("     3. Withdraw Money");
+		System.out.println("     4. View Balance");
+		System.out.println("     5. Post Money to Transfer");
+		System.out.println("     6. Accept Money from Transfer");
+		System.out.println("     7. EXIT");
+	};
+	
+	static MenusDutyBank officer = () -> {
+		printDB();
+		System.out.println("\n******** Welcome to DutyBank Officer Options Menu ********");
+		System.out.println("\n     1. Approve a New Account");
+		System.out.println("     2. View an Account");
+		System.out.println("     3. View All Transactions");
+		System.out.println("     4. EXIT");
+	};
+	
+ 
+	static void printDB() { 
+		int height = 6;
+		int width = (2 * height) - 2;
+	    int i, j, half = (height / 2);
+	    
+	    for (i = 0; i < height; i++)  { 
+	        System.out.print("*"); 
+	        for (j = 0; j < height; j++)  { 
+	            if ((i == 0 || i == height - 1) 
+	                && j < height - 1) 
+	                System.out.print("*"); 
+	            else if (j == height - 1 && i != 0
+	                    && i != height - 1) 
+	                System.out.print("*"); 
+	            else
+	                System.out.print(" "); 
+	        } 
+	        System.out.print("\n"); 
+	    }
+
+	    for (i = 0; i < height; i++) { 
+	        System.out.print("*"); 
+	        for (j = 0; j < width; j++) { 
+	            if ((i == 0 || i == height - 1 || i == half) 
+	                && j < (width - 2)) 
+	                System.out.print("*"); 
+	            else if (j == (width - 2) 
+	                    && !(i == 0 || i == height - 1
+	                        || i == half)) 
+	                System.out.print("*"); 
+	            else
+	                System.out.print(" "); 
+	        } 
+	        System.out.print("\n"); 
+	    } 
+	}
+	
+}

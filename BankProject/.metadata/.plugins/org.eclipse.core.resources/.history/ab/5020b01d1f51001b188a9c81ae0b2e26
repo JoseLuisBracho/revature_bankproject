@@ -1,0 +1,51 @@
+package com.dutybank.dao.Impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.dutybank.dao.LogInCrudDAO;
+import com.dutybank.dao.dbutil.PostgresqlConnection;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.UserLogIn;
+
+public class LogInCrudDAOImpl implements LogInCrudDAO {
+
+	@Override
+	public int createUser(UserLogIn User) throws BusinessException {
+		// TODO Auto-generated method stub
+		int con = 0;
+		try (Connection connection = PostgresqlConnection.getConnection()) {
+			String sql = "insert user_id, email, password, creation_date into from dutybank.login values(?, ?, ?, ?)";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setInt(1, UserLogIn.getUser_id());
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e); // Take off when app is live
+			throw new BusinessException("Internal Error Ocurred...");
+		}
+		return con;
+	}
+
+	@Override
+	public void retrieveUser(int user_id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int updateUserData(int user_id, String email, String password) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deleteUser(int user_id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

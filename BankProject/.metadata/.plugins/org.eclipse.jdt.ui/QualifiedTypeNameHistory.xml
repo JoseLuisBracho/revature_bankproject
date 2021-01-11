@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.dutybank.dao.dbutil.PostgresqlConnection"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.dutybank.utils.MenusDutyBank"/>
+    <fullyQualifiedTypeName name="com.dutybank.dao.LogInCrudDAO"/>
+    <fullyQualifiedTypeName name="com.dutybank.dao.Impl.LogInCrudDAOImpl"/>
+    <fullyQualifiedTypeName name="com.dutybank.logic.Impl.LogInCrudLogicImpl"/>
+    <fullyQualifiedTypeName name="com.dutybank.logic.LogInCrudLogic"/>
+    <fullyQualifiedTypeName name="com.dutybank.model.UserLogIn"/>
+    <fullyQualifiedTypeName name="com.dutybank.model.BankTransaction"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.dutybank.model.BankAccount"/>
+    <fullyQualifiedTypeName name="com.dutybank.logic.ClientCrudLogic"/>
+    <fullyQualifiedTypeName name="com.dutybank.logic.Impl.ClientCrudLogicImpl"/>
+    <fullyQualifiedTypeName name="com.dutybank.exception.BusinessException"/>
+    <fullyQualifiedTypeName name="com.dutybank.dao.ClientCrudDAO"/>
+    <fullyQualifiedTypeName name="com.dutybank.dao.Impl.ClientCrudDAOImpl"/>
+    <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+</qualifiedTypeNameHistroy>

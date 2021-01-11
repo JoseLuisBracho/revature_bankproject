@@ -1,0 +1,58 @@
+package com.dutybank.dao.Impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.dutybank.dao.LogInCrudDAO;
+import com.dutybank.dao.dbutil.PostgresqlConnection;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.UserLogIn;
+
+public class LogInCrudDAOImpl implements LogInCrudDAO {
+
+	@Override
+	public int createUser(UserLogIn user) throws BusinessException {
+		// TODO Auto-generated method stub
+		// This is for sign up a new user
+		int con = 0;
+		try {
+			Connection connection = PostgresqlConnection.getConnection();
+			String sql = "insert user_id, email, password, creation_date into from dutybank.login values(?, ?, ?, ?)";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setInt(1, user.getUser_id());
+			preparedStatement.setString(2, user.getEmail());
+			preparedStatement.setString(3, user.getPassword());
+			preparedStatement.setDate(4, new java.sql.Date(user.getCreation_date().getTime()));
+			
+			con = preparedStatement.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e); // Take off when app is live
+			throw new BusinessException("Internal Error Ocurred...");
+		}
+		return con;
+	}
+
+	@Override
+	public void retrieveUser(int user_id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int updateUserData(int user_id, String email, String password) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deleteUser(int user_id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}
