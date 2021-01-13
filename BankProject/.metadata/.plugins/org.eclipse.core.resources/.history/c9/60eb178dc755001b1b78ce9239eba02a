@@ -312,30 +312,8 @@ public class MainDutyBank {
 									break;
 									
 								case 2:
-									log.debug("Enter the User ID");
-									int accIdActive = Integer.parseInt(sc.nextLine());
-									
-									log.debug("Enter the amount of money to activate the account");
-									double amountToActivate = Double.parseDouble(sc.nextLine());
-									
-									BankClient activeClient = logic.retreiveClient(accIdActive);
-									
-									int clientIdToActive = activeClient.getClientid();
-									
-									BankAccount accToActive = accLogic.retrieveAccount(clientIdToActive);									
-									accToActive.setAccountactive(true);
-									
-									int accountIdToActivate = accToActive.getAccountid();
-									
-									BankTransaction activeTran = new BankTransaction(accountIdToActivate, "deposit", amountToActivate, new Date());
-									
-									BankUserAccount accountActive = new BankUserAccount(clientIdToActive, accountIdToActivate);
-									
-									if (tranLogic.createTransaction(activeTran)!=0) {
-										daoUserAcc.createUserAccount(accountActive);
-										log.info("Your new account was accredited " + amountToActivate + " mangoes!");
-									}	
-									
+									log.info("This facility is Still under construction, soon will be up, Sorry");
+									log.debug("approve an account");
 									break;
 									
 								case 3:

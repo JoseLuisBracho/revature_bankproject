@@ -1,6 +1,7 @@
 package com.dutybank.logic;
 
 import com.dutybank.exception.BusinessException;
+import com.dutybank.model.BankAccount;
 import com.dutybank.model.BankClient;
 import com.dutybank.model.BankTransaction;
 

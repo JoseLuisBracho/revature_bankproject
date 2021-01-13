@@ -59,7 +59,7 @@ public class ClientCrudLogicImpl implements ClientCrudLogic {
 			
 			daoAccDep.updateAccountBalance(accountId, balance);
 			
-		} else {log.info("This account is not active, please contact a bank officer");}
+		} else {log.info("This account is not active, contact a bank officer");}
 		
 		
 		
@@ -94,7 +94,7 @@ public class ClientCrudLogicImpl implements ClientCrudLogic {
 				throw new BusinessException("The amount to withdraw is greater than your balance");
 			}
 			
-		} else {log.info("This account is not active, please contact a bank officer");}
+		} else {log.info("This account is not active, contact a bank officer");}
 		
 	}
 

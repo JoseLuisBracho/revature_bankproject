@@ -1,7 +1,5 @@
 package com.dutybank.logic.Impl;
 
-import org.apache.log4j.Logger;
-
 import com.dutybank.dao.AccountCrudDAO;
 import com.dutybank.dao.ClientCrudDAO;
 import com.dutybank.dao.TransactionCrudDAO;
@@ -14,8 +12,6 @@ import com.dutybank.model.BankClient;
 import com.dutybank.model.BankTransaction;
 
 public class ClientCrudLogicImpl implements ClientCrudLogic {
-	
-	private static Logger log=Logger.getLogger(ClientCrudLogicImpl.class);
 
 	@Override
 	public BankClient retreiveClient(int login_id) throws BusinessException {
@@ -44,24 +40,17 @@ public class ClientCrudLogicImpl implements ClientCrudLogic {
 		AccountCrudDAO daoAccDep = new AccountCrudDAOImpl();
 		TransactionCrudDAO daoTranDep = new TransactionCrudDAOImpl();
 		
-		boolean activeAccount = daoAccDep.retrieveAccount(clientid).isAccountactive();
+		if (transaction!=null && transaction.getTransactionamount() > 0) {
+			daoTranDep.createTransaction(transaction);
+		} else {
+			throw new BusinessException("The amount to deposit must be not negative");
+		}
 		
-		if (activeAccount == true) {
-			if (transaction!=null && transaction.getTransactionamount() > 0) {
-				daoTranDep.createTransaction(transaction);
-			} else {
-				throw new BusinessException("The amount to deposit must be not negative");
-			}
-			
-			int accountId = daoAccDep.retrieveAccount(clientid).getAccountid();
-			
-			double balance = daoAccDep.retrieveAccount(clientid).getAccountbalance() + transaction.getTransactionamount();
-			
-			daoAccDep.updateAccountBalance(accountId, balance);
-			
-		} else {log.info("This account is not active, please contact a bank officer");}
+		int accountId = daoAccDep.retrieveAccount(clientid).getAccountid();
 		
+		double balance = daoAccDep.retrieveAccount(clientid).getAccountbalance() + transaction.getTransactionamount();
 		
+		daoAccDep.updateAccountBalance(accountId, balance);
 		
 	}
 
@@ -73,28 +62,23 @@ public class ClientCrudLogicImpl implements ClientCrudLogic {
 		
 		int accountId = daoAccWith.retrieveAccount(clientid).getAccountid();
 		
-		boolean activeAccount = daoAccWith.retrieveAccount(clientid).isAccountactive(); //////////
-		
-		if (activeAccount == true) {
-			if (transaction.getTransactionamount() <= daoAccWith.retrieveAccount(clientid).getAccountbalance()) {
-				
-				if (transaction!=null && transaction.getTransactionamount() > 0) {
-	
-						daoTranWith.createTransaction(transaction);
-	
-				} else {
-					throw new BusinessException("The amount to deposit must be not negative");
-				}
-				
-				double balance = daoAccWith.retrieveAccount(clientid).getAccountbalance() - transaction.getTransactionamount();
+		if (transaction.getTransactionamount() <= daoAccWith.retrieveAccount(clientid).getAccountbalance()) {
 			
-				daoAccWith.updateAccountBalance(accountId, balance);
-				
+			if (transaction!=null && transaction.getTransactionamount() > 0) {
+
+					daoTranWith.createTransaction(transaction);
+
 			} else {
-				throw new BusinessException("The amount to withdraw is greater than your balance");
+				throw new BusinessException("The amount to deposit must be not negative");
 			}
 			
-		} else {log.info("This account is not active, please contact a bank officer");}
+			double balance = daoAccWith.retrieveAccount(clientid).getAccountbalance() - transaction.getTransactionamount();
+		
+			daoAccWith.updateAccountBalance(accountId, balance);
+			
+		} else {
+			throw new BusinessException("The amount to withdraw is greater than your balance");
+		}
 		
 	}
 

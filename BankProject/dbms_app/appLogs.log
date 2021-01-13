@@ -5498,3 +5498,223 @@ Welcome to DutyBank Management System       13-Jan-2021 Wednesday CST 00:33:48
 {DEBUG}  com.dutybank.MainDutyBank        2. EXIT       13-Jan-2021 Wednesday CST 00:33:48
 {DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 00:33:48
 {DEBUG}  com.dutybank.MainDutyBank   Thank you for visiting us!       13-Jan-2021 Wednesday CST 00:33:50
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:07:50
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:07:50
+{DEBUG}  com.dutybank.MainDutyBank   
+Welcome to DutyBank Management System       13-Jan-2021 Wednesday CST 11:07:50
+{DEBUG}  com.dutybank.MainDutyBank   
+
+********************** LOG IN ****************************       13-Jan-2021 Wednesday CST 11:07:50
+{DEBUG}  com.dutybank.MainDutyBank   ****************** Select your Option ********************       13-Jan-2021 Wednesday CST 11:07:50
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Log In       13-Jan-2021 Wednesday CST 11:07:50
+{DEBUG}  com.dutybank.MainDutyBank        2. EXIT       13-Jan-2021 Wednesday CST 11:07:50
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:07:50
+{DEBUG}  com.dutybank.MainDutyBank   Enter your email       13-Jan-2021 Wednesday CST 11:07:55
+{DEBUG}  com.dutybank.MainDutyBank   Enter your password       13-Jan-2021 Wednesday CST 11:08:08
+{INFO}  com.dutybank.MainDutyBank   Hello Meli       13-Jan-2021 Wednesday CST 11:08:13
+{INFO}  com.dutybank.MainDutyBank   Estimated client, welcome to DutyBank
+       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank   
+************* DutyBank Client Options Menu ***************       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Deposit Money       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank        2. Withdraw Money       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank        3. View Balance       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank        4. Post Money to Transfer       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank        5. Accept Money from Transfer       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank        6. EXIT       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank   Please select your option       13-Jan-2021 Wednesday CST 11:08:13
+{DEBUG}  com.dutybank.MainDutyBank   Bye!       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank   
+Welcome to DutyBank Management System       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank   
+
+********************** LOG IN ****************************       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank   ****************** Select your Option ********************       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Log In       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank        2. EXIT       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:08:19
+{DEBUG}  com.dutybank.MainDutyBank   Thank you for visiting us!       13-Jan-2021 Wednesday CST 11:08:21
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:08:58
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:08:58
+{DEBUG}  com.dutybank.MainDutyBank   
+Welcome to DutyBank Management System       13-Jan-2021 Wednesday CST 11:08:58
+{DEBUG}  com.dutybank.MainDutyBank   
+
+********************** LOG IN ****************************       13-Jan-2021 Wednesday CST 11:08:58
+{DEBUG}  com.dutybank.MainDutyBank   ****************** Select your Option ********************       13-Jan-2021 Wednesday CST 11:08:58
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Log In       13-Jan-2021 Wednesday CST 11:08:58
+{DEBUG}  com.dutybank.MainDutyBank        2. EXIT       13-Jan-2021 Wednesday CST 11:08:58
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:08:58
+{DEBUG}  com.dutybank.MainDutyBank   Enter your email       13-Jan-2021 Wednesday CST 11:09:04
+{DEBUG}  com.dutybank.MainDutyBank   Enter your password       13-Jan-2021 Wednesday CST 11:09:21
+{INFO}  com.dutybank.MainDutyBank   Welcome to DutyBank officer       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank   
+******** Welcome to DutyBank Officer Options Menu ********       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Open a New Client Account       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank        2. Approve a New Account       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank        3. View an Account       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank        4. View All Transactions       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank        5. EXIT       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:09:26
+{DEBUG}  com.dutybank.MainDutyBank   Enter client first name       13-Jan-2021 Wednesday CST 11:09:29
+{DEBUG}  com.dutybank.MainDutyBank   Enter client last name       13-Jan-2021 Wednesday CST 11:09:43
+{DEBUG}  com.dutybank.MainDutyBank   Enter client legal id       13-Jan-2021 Wednesday CST 11:10:00
+{DEBUG}  com.dutybank.MainDutyBank   Gender - Male/Female       13-Jan-2021 Wednesday CST 11:10:10
+{DEBUG}  com.dutybank.MainDutyBank   Enter client contact number       13-Jan-2021 Wednesday CST 11:10:16
+{DEBUG}  com.dutybank.MainDutyBank   Enter client Birthday (MM-dd-yyyy)       13-Jan-2021 Wednesday CST 11:10:24
+{DEBUG}  com.dutybank.MainDutyBank   Enter client address       13-Jan-2021 Wednesday CST 11:10:42
+{DEBUG}  com.dutybank.MainDutyBank   Enter client nationality       13-Jan-2021 Wednesday CST 11:10:50
+{DEBUG}  com.dutybank.MainDutyBank   Monthly salary?       13-Jan-2021 Wednesday CST 11:10:53
+{DEBUG}  com.dutybank.MainDutyBank   Enter your email       13-Jan-2021 Wednesday CST 11:10:58
+{DEBUG}  com.dutybank.MainDutyBank   Enter your password       13-Jan-2021 Wednesday CST 11:11:10
+{DEBUG}  com.dutybank.MainDutyBank   Type of user client/officer       13-Jan-2021 Wednesday CST 11:11:16
+{INFO}  com.dutybank.MainDutyBank   User Login created successfully
+       13-Jan-2021 Wednesday CST 11:11:22
+{INFO}  com.dutybank.MainDutyBank   Client profile created successfully!
+       13-Jan-2021 Wednesday CST 11:11:22
+{DEBUG}  com.dutybank.MainDutyBank   Type of account - checks/savings       13-Jan-2021 Wednesday CST 11:11:22
+{DEBUG}  com.dutybank.MainDutyBank   Insert the initial balance       13-Jan-2021 Wednesday CST 11:11:42
+{DEBUG}  com.dutybank.MainDutyBank   Activate account now or later ? true/false       13-Jan-2021 Wednesday CST 11:11:49
+{INFO}  com.dutybank.MainDutyBank   Client profile created successfully!
+       13-Jan-2021 Wednesday CST 11:11:57
+{INFO}  com.dutybank.MainDutyBank   Please, wait while officers check your information....
+       13-Jan-2021 Wednesday CST 11:11:57
+{INFO}  com.dutybank.MainDutyBank   Welcome to DutyBank officer       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank   
+******** Welcome to DutyBank Officer Options Menu ********       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Open a New Client Account       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank        2. Approve a New Account       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank        3. View an Account       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank        4. View All Transactions       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank        5. EXIT       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:11:57
+{DEBUG}  com.dutybank.MainDutyBank   adios       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank   
+Welcome to DutyBank Management System       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank   
+
+********************** LOG IN ****************************       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank   ****************** Select your Option ********************       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Log In       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank        2. EXIT       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:12:05
+{DEBUG}  com.dutybank.MainDutyBank   Enter your email       13-Jan-2021 Wednesday CST 11:12:21
+{DEBUG}  com.dutybank.MainDutyBank   Enter your password       13-Jan-2021 Wednesday CST 11:12:33
+{INFO}  com.dutybank.MainDutyBank   Hello isabel       13-Jan-2021 Wednesday CST 11:16:44
+{INFO}  com.dutybank.MainDutyBank   Estimated client, welcome to DutyBank
+       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank   
+************* DutyBank Client Options Menu ***************       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Deposit Money       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank        2. Withdraw Money       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank        3. View Balance       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank        4. Post Money to Transfer       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank        5. Accept Money from Transfer       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank        6. EXIT       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank   Please select your option       13-Jan-2021 Wednesday CST 11:16:44
+{DEBUG}  com.dutybank.MainDutyBank   Enter the amount you want deposit       13-Jan-2021 Wednesday CST 11:16:49
+{DEBUG}  com.dutybank.MainDutyBank   your current balance is: 9654.3 mangoes
+       13-Jan-2021 Wednesday CST 11:16:54
+{INFO}  com.dutybank.logic.Impl.ClientCrudLogicImpl   This account is not active, contact a bank officer       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank   Your deposit is ready       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank   
+************* DutyBank Client Options Menu ***************       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Deposit Money       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank        2. Withdraw Money       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank        3. View Balance       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank        4. Post Money to Transfer       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank        5. Accept Money from Transfer       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank        6. EXIT       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank   Please select your option       13-Jan-2021 Wednesday CST 11:16:54
+{DEBUG}  com.dutybank.MainDutyBank   Bye!       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank   
+Welcome to DutyBank Management System       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank   
+
+********************** LOG IN ****************************       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank   ****************** Select your Option ********************       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Log In       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank        2. EXIT       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:17:03
+{DEBUG}  com.dutybank.MainDutyBank   Thank you for visiting us!       13-Jan-2021 Wednesday CST 11:17:05
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:48:32
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:48:32
+{DEBUG}  com.dutybank.MainDutyBank   
+Welcome to DutyBank Management System       13-Jan-2021 Wednesday CST 11:48:32
+{DEBUG}  com.dutybank.MainDutyBank   
+
+********************** LOG IN ****************************       13-Jan-2021 Wednesday CST 11:48:32
+{DEBUG}  com.dutybank.MainDutyBank   ****************** Select your Option ********************       13-Jan-2021 Wednesday CST 11:48:32
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Log In       13-Jan-2021 Wednesday CST 11:48:32
+{DEBUG}  com.dutybank.MainDutyBank        2. EXIT       13-Jan-2021 Wednesday CST 11:48:32
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:48:32
+{DEBUG}  com.dutybank.MainDutyBank   Enter your email       13-Jan-2021 Wednesday CST 11:48:38
+{DEBUG}  com.dutybank.MainDutyBank   Enter your password       13-Jan-2021 Wednesday CST 11:48:47
+{INFO}  com.dutybank.MainDutyBank   Welcome to DutyBank officer       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank   
+******** Welcome to DutyBank Officer Options Menu ********       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Open a New Client Account       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank        2. Approve a New Account       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank        3. View an Account       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank        4. View All Transactions       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank        5. EXIT       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:48:51
+{DEBUG}  com.dutybank.MainDutyBank   Enter the User ID       13-Jan-2021 Wednesday CST 11:49:01
+{DEBUG}  com.dutybank.MainDutyBank   Enter the amount of money to activate the account       13-Jan-2021 Wednesday CST 11:49:04
+{INFO}  com.dutybank.MainDutyBank   Your new account was accredited 1236.34 mangoes!       13-Jan-2021 Wednesday CST 11:49:19
+{INFO}  com.dutybank.MainDutyBank   Welcome to DutyBank officer       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank   
+******** Welcome to DutyBank Officer Options Menu ********       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Open a New Client Account       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank        2. Approve a New Account       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank        3. View an Account       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank        4. View All Transactions       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank        5. EXIT       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:49:19
+{DEBUG}  com.dutybank.MainDutyBank   adios       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank        DUTY       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank        BANK       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank   
+Welcome to DutyBank Management System       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank   
+
+********************** LOG IN ****************************       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank   ****************** Select your Option ********************       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank   
+     1. Log In       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank        2. EXIT       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank   Please type your option       13-Jan-2021 Wednesday CST 11:49:34
+{DEBUG}  com.dutybank.MainDutyBank   Thank you for visiting us!       13-Jan-2021 Wednesday CST 11:49:35
