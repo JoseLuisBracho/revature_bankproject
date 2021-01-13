@@ -1,0 +1,41 @@
+package com.dutybank.logic.Impl.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Date;
+
+import org.junit.jupiter.api.Test;
+
+import com.dutybank.exception.BusinessException;
+import com.dutybank.logic.Impl.OfficerCrudLogicImpl;
+import com.dutybank.model.BankClient;
+
+class OfficerCrudLogicImplTest {
+	
+	OfficerCrudLogicImpl officer = new OfficerCrudLogicImpl();
+	
+	BankClient bc = new BankClient("jj", "hh", "ghh1", "M", new Date(), "us", "us", 213.3, 1254554, 3);
+
+	@Test
+	void testCreateClientEquals() throws BusinessException {
+		assertFalse(officer.createClient(bc)>0);
+	}
+	
+	@Test
+	void testCreateClientForNull() throws BusinessException {
+		assertNotNull(officer.createClient(null));
+	}
+	
+	@Test
+	void testGetAllAccountsForSize() {
+		int numberAcc = 6;
+		try {
+			assertEquals(numberAcc, officer.getAllAccounts().size());
+		} catch (BusinessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

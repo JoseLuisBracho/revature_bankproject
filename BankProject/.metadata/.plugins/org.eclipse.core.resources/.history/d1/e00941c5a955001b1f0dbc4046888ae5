@@ -1,0 +1,24 @@
+package com.dutybank.logic.Impl.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Date;
+
+import org.junit.jupiter.api.Test;
+
+import com.dutybank.exception.BusinessException;
+import com.dutybank.logic.Impl.OfficerCrudLogicImpl;
+import com.dutybank.model.BankClient;
+
+class OfficerCrudLogicImplTest {
+	
+	OfficerCrudLogicImpl officer = new OfficerCrudLogicImpl();
+	
+	
+	@Test
+	void testCreateClientForNull() throws BusinessException {
+		assertNotNull(officer.createClient(null));
+	}
+	
+
+}

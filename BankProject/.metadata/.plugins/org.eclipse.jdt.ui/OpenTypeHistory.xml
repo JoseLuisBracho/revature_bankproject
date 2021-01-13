@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=dbms_app/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dutybank.logic{LogInCrudLogic.java[LogInCrudLogic" modifiers="513" timestamp="1610213550592"/>
+    <typeInfo handle="=dbms_app/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dutybank.logic{LogInCrudLogic.java[LogInCrudLogic" modifiers="513" timestamp="1610496960165"/>
+    <typeInfo handle="=dbms_app/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.dutybank.logic.Impl{OfficerCrudLogicImpl.java[OfficerCrudLogicImpl" modifiers="1" timestamp="1610519586556"/>
 </typeInfoHistroy>

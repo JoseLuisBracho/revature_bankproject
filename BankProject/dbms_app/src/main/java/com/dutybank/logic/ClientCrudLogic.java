@@ -2,14 +2,16 @@ package com.dutybank.logic;
 
 import com.dutybank.exception.BusinessException;
 import com.dutybank.model.BankAccount;
+import com.dutybank.model.BankClient;
 import com.dutybank.model.BankTransaction;
 
 public interface ClientCrudLogic {
-	public int createNewAccount(BankAccount account) throws BusinessException;
+	
+	public BankClient retreiveClient(int login_id) throws BusinessException;
 	public double viewBalance(int accountid);
-	public BankAccount makeDeposit(BankTransaction t);
-	public BankAccount makeWithdraw(BankTransaction t);
-	public BankAccount postTranfer();
-	public BankAccount acceptTranfer();
+	public void makeDeposit(int clientid, BankTransaction transaction) throws BusinessException;
+	public void makeWithdraw(int clientid, BankTransaction transaction) throws BusinessException;
+	public BankTransaction postTranfer(String email, double money);
+
 
 }

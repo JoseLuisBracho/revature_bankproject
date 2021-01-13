@@ -1,0 +1,5 @@
+package com.dutybank.logic;
+
+public interface AccountCrudLogic {
+
+}

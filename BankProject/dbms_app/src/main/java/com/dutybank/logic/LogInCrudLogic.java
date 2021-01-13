@@ -5,9 +5,9 @@ import com.dutybank.model.UserLogIn;
 
 public interface LogInCrudLogic {
 	
-	public int createUser(UserLogIn User) throws BusinessException; // Sign up
-	public UserLogIn retrieveUser(String email) throws BusinessException; // Log in
-	public int updateUserData(int user_id, String email, String password); // Update user data
-	public void deleteUser(int user_id); // Delete a user review cause no apply to a user, it's for an bank officer
+	public UserLogIn retrieveUserLogic(String email, String password) throws BusinessException; 
+	public int updateUserData(int user_id, String email, String password);
+	public void deleteUser(int user_id); 
+	public UserLogIn getClientByEmail(String email) throws BusinessException;
 
 }

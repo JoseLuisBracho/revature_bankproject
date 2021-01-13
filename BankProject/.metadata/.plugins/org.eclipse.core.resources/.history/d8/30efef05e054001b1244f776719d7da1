@@ -1,0 +1,60 @@
+package com.dutybank.logic.Impl;
+
+import com.dutybank.dao.ClientCrudDAO;
+import com.dutybank.dao.Impl.ClientCrudDAOImpl;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.logic.ClientCrudLogic;
+import com.dutybank.model.BankAccount;
+import com.dutybank.model.BankClient;
+import com.dutybank.model.BankTransaction;
+
+public class ClientCrudLogicImpl implements ClientCrudLogic {
+
+	@Override
+	public BankClient retreiveClient(int login_id) throws BusinessException {
+		// TODO Auto-generated method stub
+		BankClient client = null;
+		ClientCrudDAO daoClient = new ClientCrudDAOImpl();
+		
+		client = daoClient.retreiveClient(login_id);
+		
+		if (client!=null) {
+			return client;
+		} else {
+			throw new BusinessException("Invalid client...");
+		}
+	}
+
+	@Override
+	public double viewBalance(int accountid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public BankAccount makeDeposit(BankTransaction t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BankAccount makeWithdraw(BankTransaction t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BankAccount postTranfer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BankAccount acceptTranfer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+}

@@ -13,13 +13,14 @@ public class BankClient {
 	private String clientnationality;
 	private double clientsalary;
 	private long clientcontact;
+	private int clientloginid;
 	
 	public BankClient() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public BankClient(int clientid, String clientname, String clientlastname, String clientdocument, String clientgender,
-			Date clientdob, String clientaddress, String clientnationality, double clientsalary, long clientcontact) {
+			Date clientdob, String clientaddress, String clientnationality, double clientsalary, long clientcontact, int clientloginid) {
 		super();
 		this.clientid = clientid;
 		this.clientname = clientname;
@@ -31,6 +32,22 @@ public class BankClient {
 		this.clientnationality = clientnationality;
 		this.clientsalary = clientsalary;
 		this.clientcontact = clientcontact;
+		this.clientloginid = clientloginid;
+	}
+	
+	public BankClient(String clientname, String clientlastname, String clientdocument, String clientgender,
+			Date clientdob, String clientaddress, String clientnationality, double clientsalary, long clientcontact, int clientloginid) {
+		super();
+		this.clientname = clientname;
+		this.clientlastname = clientlastname;
+		this.clientdocument = clientdocument;
+		this.clientgender = clientgender;
+		this.clientdob = clientdob;
+		this.clientaddress = clientaddress;
+		this.clientnationality = clientnationality;
+		this.clientsalary = clientsalary;
+		this.clientcontact = clientcontact;
+		this.clientloginid = clientloginid;
 	}
 
 	public int getClientid() {
@@ -114,14 +131,22 @@ public class BankClient {
 		this.clientcontact = clientcontact;
 	}
 
+	public int getClientloginid() {
+		return clientloginid;
+	}
+
+	public void setClientloginid(int clientloginid) {
+		this.clientloginid = clientloginid;
+	}
+
+	
 	@Override
 	public String toString() {
 		return "BankClient [clientid=" + clientid + ", clientname=" + clientname + ", clientlastname=" + clientlastname
 				+ ", clientdocument=" + clientdocument + ", clientgender=" + clientgender + ", clientdob=" + clientdob
 				+ ", clientaddress=" + clientaddress + ", clientnationality=" + clientnationality + ", clientsalary="
-				+ clientsalary + ", clientcontact=" + clientcontact + "]";
+				+ clientsalary + ", clientcontact=" + clientcontact + ", clientloginid=" + clientloginid + "]";
 	}
-	
 	
 
 }

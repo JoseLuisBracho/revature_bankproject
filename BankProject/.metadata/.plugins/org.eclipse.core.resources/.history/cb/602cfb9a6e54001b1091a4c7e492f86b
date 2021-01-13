@@ -1,0 +1,17 @@
+package com.dutybank.logic;
+
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.BankAccount;
+import com.dutybank.model.BankClient;
+import com.dutybank.model.BankTransaction;
+import com.dutybank.model.UserLogIn;
+
+public interface OfficerCrudLogic {
+	
+	public int createClient(BankClient client) throws BusinessException;
+	public BankAccount viewClientAccount(int user_id);
+	public BankTransaction viewAllTransaction();
+	public void approveNewAccount(boolean active);
+	public int createLogin(UserLogIn user);
+
+}

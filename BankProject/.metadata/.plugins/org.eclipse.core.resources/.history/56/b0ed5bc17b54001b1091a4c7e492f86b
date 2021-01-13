@@ -1,0 +1,9 @@
+package com.dutybank.logic;
+
+import com.dutybank.model.BankTransaction;
+
+public interface TransactionCrudLogic {
+	public BankTransaction retrieveAccount(int account_id);
+	public int createTransaction(BankTransaction transaction);
+
+}

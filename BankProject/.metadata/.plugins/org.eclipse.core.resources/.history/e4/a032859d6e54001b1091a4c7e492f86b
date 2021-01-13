@@ -1,0 +1,44 @@
+package com.dutybank.logic.Impl;
+
+import com.dutybank.dao.ClientCrudDAO;
+import com.dutybank.dao.Impl.ClientCrudDAOImpl;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.logic.OfficerCrudLogic;
+import com.dutybank.model.BankAccount;
+import com.dutybank.model.BankClient;
+import com.dutybank.model.BankTransaction;
+
+public class OfficerCrudLogicImpl implements OfficerCrudLogic {
+
+	@Override
+	public int createClient(BankClient client) throws BusinessException {
+		// TODO Auto-generated method stub
+		int cl = 0;
+		ClientCrudDAO daoClient = new ClientCrudDAOImpl();
+		
+		if (client!=null) {
+			cl = daoClient.createClient(client);
+		}
+		
+		return cl;
+	}
+
+	@Override
+	public BankAccount viewClientAccount(int user_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BankTransaction viewAllTransaction() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void approveNewAccount(boolean active) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.dutybank.dao;
+
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.BankTransaction;
+
+public interface TransactionCrudDAO {
+	
+	public BankTransaction retrieveAccount(int account_id);
+	public int createAccount(BankTransaction transaction) throws BusinessException;
+	
+}

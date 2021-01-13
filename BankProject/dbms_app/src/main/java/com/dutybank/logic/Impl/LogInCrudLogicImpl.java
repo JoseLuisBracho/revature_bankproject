@@ -9,13 +9,7 @@ import com.dutybank.model.UserLogIn;
 public class LogInCrudLogicImpl implements LogInCrudLogic {
 
 	@Override
-	public int createUser(UserLogIn User) throws BusinessException {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public UserLogIn retrieveUser(String email) throws BusinessException {
+	public UserLogIn retrieveUserLogic(String email, String password) throws BusinessException {
 		// TODO Auto-generated method stub
 		UserLogIn user = null;
 		LogInCrudDAO dao = new LogInCrudDAOImpl();
@@ -24,7 +18,12 @@ public class LogInCrudLogicImpl implements LogInCrudLogic {
 		} else {
 			throw new BusinessException("Invalid email address, try again");
 		}
-		return user;
+		
+		if (password!=null && password.equals(user.getPassword())) {
+			return user;
+		} else {
+			throw new BusinessException("Invalid password, try again");
+		}
 	}
 
 	@Override
@@ -37,6 +36,21 @@ public class LogInCrudLogicImpl implements LogInCrudLogic {
 	public void deleteUser(int user_id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public UserLogIn getClientByEmail(String email) throws BusinessException {
+		// TODO Auto-generated method stub
+		UserLogIn user = null;
+		LogInCrudDAO dao = new LogInCrudDAOImpl();
+		if (email!=null && email.matches("[0-9a-zA-Z]{2,45}@[0-9a-zA-Z]{2,45}.[a-zA-Z]{3}")) {
+			user = dao.retrieveUser(email);
+		} else {
+			throw new BusinessException("Invalid email address, try again");
+		}
+		
+			return user;
+
 	}
 
 

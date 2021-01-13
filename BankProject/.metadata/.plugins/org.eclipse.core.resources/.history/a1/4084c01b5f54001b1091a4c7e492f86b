@@ -1,0 +1,14 @@
+package com.dutybank.logic;
+
+import com.dutybank.model.BankAccount;
+import com.dutybank.model.BankClient;
+import com.dutybank.model.BankTransaction;
+
+public interface OfficerCrudLogic {
+	
+	public int createClient(BankClient client);
+	public int createAccount(BankAccount account);
+	public BankAccount viewClientAccount(int user_id);
+	public BankTransaction viewAllTransaction();
+
+}

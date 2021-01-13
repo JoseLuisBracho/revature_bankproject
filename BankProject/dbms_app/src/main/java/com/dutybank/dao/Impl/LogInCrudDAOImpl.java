@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.dutybank.dao.LogInCrudDAO;
 import com.dutybank.dao.dbutil.PostgresqlConnection;
@@ -13,46 +15,24 @@ import com.dutybank.model.UserLogIn;
 public class LogInCrudDAOImpl implements LogInCrudDAO {
 
 	@Override
-	public int createUser(UserLogIn user) throws BusinessException {
-		// TODO Auto-generated method stub
-		// This is for sign up a new user
-		int conn = 0;
-		try (Connection connection = PostgresqlConnection.getConnection()) {
-			String sql = "insert into dutybank.login (user_id, email, password, creation_date) values(?, ?, ?, ?)";
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			
-			preparedStatement.setInt(1, user.getUser_id());
-			preparedStatement.setString(2, user.getEmail());
-			preparedStatement.setString(3, user.getPassword());
-			preparedStatement.setDate(4, new java.sql.Date(user.getCreation_date().getTime()));
-			
-			conn = preparedStatement.executeUpdate();
-			
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e); // Take off when app is live
-			throw new BusinessException("Internal Error Ocurred...");
-		}
-		return conn;
-	}
-
-	@Override  // If email does not exist -> validation. Same for password
 	public UserLogIn retrieveUser(String email) throws BusinessException {
 		// TODO Auto-generated method stub
 		UserLogIn user = null;
 		Connection connection;
 		try {
 			connection = PostgresqlConnection.getConnection();
-			String sql = "select user_id, email, password, creation_date from dutybank.login where email=?";
+			String sql = "select login_id, email, password, creation_date, user_type from dutybank.login where email=?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, email);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			
 			if (resultSet.next()) {
 				user = new UserLogIn();
-				user.setUser_id(resultSet.getInt("user_id"));
-				user.setEmail(email);
+				user.setLogin_id(resultSet.getInt("login_id"));
+				user.setEmail(resultSet.getString("email"));
 				user.setPassword(resultSet.getString("password"));
+				user.setCreation_date(resultSet.getDate("creation_date"));
+				user.setUser_type(resultSet.getString("user_type"));
 				
 			} else {
 				throw new BusinessException("Some Internal Error Occurred!");
@@ -60,12 +40,10 @@ public class LogInCrudDAOImpl implements LogInCrudDAO {
 		
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Some exception retrieving tha data has occurred");
-			throw new BusinessException("Some Internal Error Occurred!");
+			throw new BusinessException("Some exception retrieving user login data has occurred");
 		}
 		
 		return user;
-		
 	}
 
 	@Override
@@ -79,6 +57,68 @@ public class LogInCrudDAOImpl implements LogInCrudDAO {
 		// TODO Auto-generated method stub
 		
 	}
-	
+
+	@Override
+	public int createLogin(UserLogIn user) throws BusinessException {
+		// TODO Auto-generated method stub
+		int lg = 0;
+		
+		try {
+			Connection connection = PostgresqlConnection.getConnection();
+			String sql = "insert into dutybank.login (email, password, user_type) values(?,?,?)";
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setString(1, user.getEmail());
+			preparedStatement.setString(2, user.getPassword());
+			preparedStatement.setString(3, user.getUser_type());
+
+			
+			lg = preparedStatement.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Some internal error has occurred while creating data");
+		}
+		
+
+		return lg;
+	}
+
+	@Override
+	public List<UserLogIn> retriveAllUsers() throws BusinessException {
+		// TODO Auto-generated method stub
+		UserLogIn bankLogin = null;
+		List<UserLogIn> bankLoginList = new ArrayList<>();
+		Connection connection;
+		try {
+			connection = PostgresqlConnection.getConnection();
+			String sql = "select login_id, email, password, creation_date, user_type from dutybank.login";
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				bankLogin = new UserLogIn();
+				bankLogin.setLogin_id(resultSet.getInt("login_id"));
+				bankLogin.setEmail(resultSet.getString("email"));
+				bankLogin.setPassword(resultSet.getString("password"));
+				bankLogin.setCreation_date(resultSet.getDate("creation_date"));
+				bankLogin.setUser_type(resultSet.getString("user_type"));
+
+				bankLoginList.add(bankLogin);
+			} 
+			
+			if (bankLoginList.size() == 0) {
+				throw new BusinessException("There is not data to retrieve");
+			}
+		
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Some Error occurred retrieving data for logins");
+		}
+		
+		return bankLoginList;
+	}
+
+
 
 }

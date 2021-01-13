@@ -1,29 +1,31 @@
 package com.dutybank.logic.Impl;
 
+import com.dutybank.dao.AccountCrudDAO;
 import com.dutybank.dao.ClientCrudDAO;
-import com.dutybank.dao.LogInCrudDAO;
+import com.dutybank.dao.TransactionCrudDAO;
+import com.dutybank.dao.Impl.AccountCrudDAOImpl;
 import com.dutybank.dao.Impl.ClientCrudDAOImpl;
-import com.dutybank.dao.Impl.LogInCrudDAOImpl;
+import com.dutybank.dao.Impl.TransactionCrudDAOImpl;
 import com.dutybank.exception.BusinessException;
 import com.dutybank.logic.ClientCrudLogic;
-import com.dutybank.model.BankAccount;
+import com.dutybank.model.BankClient;
 import com.dutybank.model.BankTransaction;
-import com.dutybank.model.UserLogIn;
 
 public class ClientCrudLogicImpl implements ClientCrudLogic {
 
 	@Override
-	public int createNewAccount(BankAccount account) throws BusinessException {
+	public BankClient retreiveClient(int login_id) throws BusinessException {
 		// TODO Auto-generated method stub
-		int acc = 0;
-		ClientCrudDAO dao = new ClientCrudDAOImpl();
-		if (account!=null) {
-			acc = dao.createNewAccount(account);
+		BankClient client = null;
+		ClientCrudDAO daoClient = new ClientCrudDAOImpl();
+		
+		client = daoClient.retreiveClient(login_id);
+		
+		if (client!=null) {
+			return client;
 		} else {
-			throw new BusinessException("Invalid account, try again");
+			throw new BusinessException("Invalid client...");
 		}
-
-		return acc;
 	}
 
 	@Override
@@ -33,27 +35,60 @@ public class ClientCrudLogicImpl implements ClientCrudLogic {
 	}
 
 	@Override
-	public BankAccount makeDeposit(BankTransaction t) {
+	public void makeDeposit(int clientid, BankTransaction transaction) throws BusinessException {
+		// TODO Auto-generated method stub
+		AccountCrudDAO daoAccDep = new AccountCrudDAOImpl();
+		TransactionCrudDAO daoTranDep = new TransactionCrudDAOImpl();
+		
+		if (transaction!=null && transaction.getTransactionamount() > 0) {
+			daoTranDep.createTransaction(transaction);
+		} else {
+			throw new BusinessException("The amount to deposit must be not negative");
+		}
+		
+		int accountId = daoAccDep.retrieveAccount(clientid).getAccountid();
+		
+		double balance = daoAccDep.retrieveAccount(clientid).getAccountbalance() + transaction.getTransactionamount();
+		
+		daoAccDep.updateAccountBalance(accountId, balance);
+		
+	}
+
+	@Override
+	public void makeWithdraw(int clientid, BankTransaction transaction) throws BusinessException {
+		// TODO Auto-generated method stub
+		AccountCrudDAO daoAccWith = new AccountCrudDAOImpl();
+		TransactionCrudDAO daoTranWith = new TransactionCrudDAOImpl();
+		
+		int accountId = daoAccWith.retrieveAccount(clientid).getAccountid();
+		
+		if (transaction.getTransactionamount() <= daoAccWith.retrieveAccount(clientid).getAccountbalance()) {
+			
+			if (transaction!=null && transaction.getTransactionamount() > 0) {
+
+					daoTranWith.createTransaction(transaction);
+
+			} else {
+				throw new BusinessException("The amount to deposit must be not negative");
+			}
+			
+			double balance = daoAccWith.retrieveAccount(clientid).getAccountbalance() - transaction.getTransactionamount();
+		
+			daoAccWith.updateAccountBalance(accountId, balance);
+			
+		} else {
+			throw new BusinessException("The amount to withdraw is greater than your balance");
+		}
+		
+	}
+
+	@Override
+	public BankTransaction postTranfer(String email, double money) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public BankAccount makeWithdraw(BankTransaction t) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public BankAccount postTranfer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public BankAccount acceptTranfer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

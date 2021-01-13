@@ -1,0 +1,10 @@
+package com.dutybank.dao;
+
+import com.dutybank.model.BankAccount;
+
+public interface TransactionCrudDAO {
+	
+	public BankAccount retrieveAccount(int client_id);
+	public int createAccount(BankAccount account);
+	
+}

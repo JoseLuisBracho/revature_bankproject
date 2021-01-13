@@ -1,0 +1,53 @@
+package com.dutybank.logic.Impl.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Date;
+
+import org.junit.jupiter.api.Test;
+
+import com.dutybank.exception.BusinessException;
+import com.dutybank.logic.Impl.OfficerCrudLogicImpl;
+import com.dutybank.model.BankClient;
+
+class OfficerCrudLogicImplTest {
+	
+	OfficerCrudLogicImpl officer = new OfficerCrudLogicImpl();
+	
+	BankClient bc = new BankClient(1, "jj", "hh", "ghh1", "M", new Date(), "us", "us", 213.3, 1254554, 3);
+
+	@Test
+	void testCreateClientNotSame() throws BusinessException {
+		assertSame(1, officer.createClient(bc));
+	}
+	
+	@Test
+	void testCreateClientForNull() throws BusinessException {
+		assertNotNull(officer.createClient(null));
+	}
+
+	@Test
+	void testViewClientAccount() {
+		
+	}
+
+	@Test
+	void testCreateLogin() {
+		fail("Not yet implemented");
+	}
+
+}
+
+
+//@Override
+//public int createClient(BankClient client) throws BusinessException {
+//	// TODO Auto-generated method stub
+//	int cl = 0;
+//	ClientCrudDAO daoClient = new ClientCrudDAOImpl();
+//	
+//	if (client!=null) {
+//		cl = daoClient.createClient(client);
+//	}
+//	
+//	return cl;
+//}

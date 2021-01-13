@@ -1,0 +1,60 @@
+package com.dutybank.logic.Impl;
+
+import com.dutybank.dao.ClientCrudDAO;
+import com.dutybank.dao.LogInCrudDAO;
+import com.dutybank.dao.Impl.ClientCrudDAOImpl;
+import com.dutybank.dao.Impl.LogInCrudDAOImpl;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.logic.OfficerCrudLogic;
+import com.dutybank.model.BankAccount;
+import com.dutybank.model.BankClient;
+import com.dutybank.model.BankTransaction;
+import com.dutybank.model.UserLogIn;
+
+public class OfficerCrudLogicImpl implements OfficerCrudLogic {
+
+	@Override
+	public int createClient(BankClient client) throws BusinessException {
+		// TODO Auto-generated method stub
+		int cl = 0;
+		ClientCrudDAO daoClient = new ClientCrudDAOImpl();
+		
+		if (client!=null) {
+			cl = daoClient.createClient(client);
+		}
+		
+		return cl;
+	}
+
+	@Override
+	public BankAccount viewClientAccount(int user_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BankTransaction viewAllTransaction() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void approveNewAccount(boolean active) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int createLogin(UserLogIn user) throws BusinessException {
+		// TODO Auto-generated method stub
+		int ac = 0;
+		LogInCrudDAO daoLogin = new LogInCrudDAOImpl();
+		
+		if (user!=null) {
+			ac = daoLogin.createLogin(user);
+		}
+		
+		return ac;
+	}
+
+}

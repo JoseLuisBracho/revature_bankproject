@@ -9,13 +9,14 @@ public class BankAccount {
 	private double accountbalance;
 	private double accountrate;
 	private Date accountopen;
+	private boolean accountactive;
 	
 	public BankAccount() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public BankAccount(int accountid, String accounttype, int clientid, double accountbalance, double accountrate,
-			Date accountopen) {
+			Date accountopen, boolean accountactive) {
 		super();
 		this.accountid = accountid;
 		this.accounttype = accounttype;
@@ -23,6 +24,18 @@ public class BankAccount {
 		this.accountbalance = accountbalance;
 		this.accountrate = accountrate;
 		this.accountopen = accountopen;
+		this.accountactive = accountactive;
+	}
+	
+	public BankAccount(String accounttype, int clientid, double accountbalance, double accountrate,
+			Date accountopen, boolean accountactive) {
+		super();
+		this.accounttype = accounttype;
+		this.clientid = clientid;
+		this.accountbalance = accountbalance;
+		this.accountrate = accountrate;
+		this.accountopen = accountopen;
+		this.accountactive = accountactive;
 	}
 
 	public int getAccountid() {
@@ -73,11 +86,20 @@ public class BankAccount {
 		this.accountopen = accountopen;
 	}
 
+
+	public boolean isAccountactive() {
+		return accountactive;
+	}
+
+	public void setAccountactive(boolean accountactive) {
+		this.accountactive = accountactive;
+	}
+
 	@Override
 	public String toString() {
 		return "BankAccount [accountid=" + accountid + ", accounttype=" + accounttype + ", clientid=" + clientid
 				+ ", accountbalance=" + accountbalance + ", accountrate=" + accountrate + ", accountopen=" + accountopen
-				+ "]";
+				+ ", accountactive=" + accountactive + "]";
 	}
 	
 	

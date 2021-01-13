@@ -22,6 +22,15 @@ public class BankTransaction {
 		this.transactionamount = transactionamount;
 		this.transactiondate = transactiondate;
 	}
+	
+	public BankTransaction(int accountid, String transactiontype, double transactionamount,
+			Date transactiondate) {
+		super();
+		this.accountid = accountid;
+		this.transactiontype = transactiontype;
+		this.transactionamount = transactionamount;
+		this.transactiondate = transactiondate;
+	}
 
 	public int getTransactionid() {
 		return transactionid;

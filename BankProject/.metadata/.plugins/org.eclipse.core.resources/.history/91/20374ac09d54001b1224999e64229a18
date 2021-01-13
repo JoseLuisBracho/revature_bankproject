@@ -1,0 +1,121 @@
+package com.dutybank.dao.Impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.dutybank.dao.AccountCrudDAO;
+import com.dutybank.dao.dbutil.PostgresqlConnection;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.BankAccount;
+
+public class AccountCrudDAOImpl implements AccountCrudDAO {
+
+	@Override
+	public BankAccount retrieveAccount(int user_id) throws BusinessException {
+		// TODO Auto-generated method stub
+		BankAccount account = null;
+		Connection connection;
+		try {
+			connection = PostgresqlConnection.getConnection();
+			String sql = "select account_id, account_type, user_id, balance, interest_rate, open_date, "
+					+ "active from dutybank.accounts where user_id=?";
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, user_id);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			if (resultSet.next()) {
+				account = new BankAccount();
+				account.setAccountid(resultSet.getInt("account_id"));
+				account.setAccounttype(resultSet.getString("account_type"));
+				account.setClientid(resultSet.getInt("user_id"));
+				account.setAccountbalance(resultSet.getDouble("balance"));
+				account.setAccountrate(resultSet.getDouble("interest_rate"));
+				account.setAccountopen(resultSet.getDate("open_date"));
+				account.setAccountactive(resultSet.getBoolean("active"));
+
+				
+			} else {
+				throw new BusinessException("Some Internal Error Occurred!");
+			}
+		
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			throw new BusinessException("Some exception retrieving tha data has occurred in account");
+		}
+		return account;
+	}
+
+	@Override
+	public int createAccount(BankAccount account) throws ClassNotFoundException, SQLException, BusinessException {
+		// TODO Auto-generated method stub
+		int acc = 0;
+		
+		try {
+			Connection connection = PostgresqlConnection.getConnection();
+			String sql = "insert into dutybank.accounts (account_type, user_id, balance, interest_rate, open_date, active) values(?,?,?,?,?,?)";
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, account.getAccounttype());
+			preparedStatement.setInt(2, account.getClientid());
+			preparedStatement.setDouble(3, account.getAccountbalance());
+			preparedStatement.setDouble(4, account.getAccountrate());
+			preparedStatement.setDate(5, new java.sql.Date(account.getAccountopen().getTime()));
+			preparedStatement.setBoolean(6, account.isAccountactive());
+			
+			acc = preparedStatement.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Some internal error has occurred while fetching data");
+		}
+		
+
+		return acc;
+	}
+
+	@Override
+	public List viewAnAccount(String legalid) throws BusinessException {
+		// TODO Auto-generated method stub
+		List accountList = null;
+		Connection connection;
+		try {
+			connection = PostgresqlConnection.getConnection();
+			String sql = "select u.first_name, u.last_name, a.balance, a.account_type, a.open_date from users u "
+					+ "inner join users_accounts ua "
+					+ "on u.user_id = ua.user_id "
+					+ "inner join accounts a "
+					+ "on ua.account_id = a.account_id "
+					+ "where u.legalid = ?";
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, legalid);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			if (resultSet.next()) {
+				accountList = new ArrayList<>();
+				accountList.add(resultSet.getString("u.first_name"));
+				accountList.add(resultSet.getString("u.last_name"));
+				accountList.add(resultSet.getDouble("a.balance"));
+				accountList.add(resultSet.getString("a.account_type"));
+				accountList.add(resultSet.getDate("a.open_date"));
+
+
+				
+			} else {
+				throw new BusinessException("Some Internal Error Occurred!");
+			}
+		
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			throw new BusinessException("Some exception retrieving tha data has occurred in viewAnAccount");
+		}
+		return accountList;
+	}
+
+}

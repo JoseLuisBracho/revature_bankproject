@@ -1,0 +1,20 @@
+package com.dutybank.logic;
+
+import java.util.Map;
+
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.BankClient;
+import com.dutybank.model.BankTransaction;
+import com.dutybank.model.BankUserAccount;
+import com.dutybank.model.UserLogIn;
+
+public interface OfficerCrudLogic {
+	
+	public int createClient(BankClient client) throws BusinessException;
+	public Map<String, String> viewClientAccount(String legalid) throws BusinessException;
+	public BankTransaction viewAllTransaction();
+	public void approveNewAccount(boolean active);
+	public int createLogin(UserLogIn user) throws BusinessException;
+	public int createUserAccount(BankUserAccount userAccount);
+
+}

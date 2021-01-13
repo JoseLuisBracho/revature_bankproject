@@ -1,0 +1,48 @@
+package com.dutybank.dao.Impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.dutybank.dao.AccountCrudDAO;
+import com.dutybank.dao.dbutil.PostgresqlConnection;
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.BankAccount;
+
+public class AccountCrudDAOImpl implements AccountCrudDAO {
+
+	@Override
+	public BankAccount retrieveAccount(int client_id) {
+		// TODO Auto-generated method stub
+		BankAccount bankAccount = null;
+		return bankAccount;
+	}
+
+	@Override
+	public int createAccount(BankAccount account) throws ClassNotFoundException, SQLException, BusinessException {
+		// TODO Auto-generated method stub
+		int acc = 0;
+		
+		
+		try {
+			Connection connection = PostgresqlConnection.getConnection();
+			String sql = "insert into dutybank.users (account_type, user_id, balance, interest_rate, open_date, active) values(?,?,?,?,?,?)";
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, account.getAccounttype());
+			preparedStatement.setInt(2, account.getClientid());
+			preparedStatement.setDouble(3, account.getAccountbalance());
+			preparedStatement.setDouble(4, account.getAccountrate());
+			preparedStatement.setDate(5, new java.sql.Date(account.getAccountopen().getTime()));
+			preparedStatement.setBoolean(6, account.isAccountactive());
+			
+			acc = preparedStatement.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new BusinessException("Some internal error has occurred while fetching data");
+		}
+		
+
+		return acc;
+	}
+
+}

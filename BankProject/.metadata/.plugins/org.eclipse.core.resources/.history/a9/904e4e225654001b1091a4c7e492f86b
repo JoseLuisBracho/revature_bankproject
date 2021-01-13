@@ -1,0 +1,23 @@
+package com.dutybank.logic.Impl;
+
+import java.sql.SQLException;
+
+import com.dutybank.exception.BusinessException;
+import com.dutybank.logic.AccountCrudLogic;
+import com.dutybank.model.BankAccount;
+
+public class AccountCrudLogicImpl implements AccountCrudLogic {
+
+	@Override
+	public BankAccount retrieveAccount(int client_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int createAccount(BankAccount account) throws ClassNotFoundException, SQLException, BusinessException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

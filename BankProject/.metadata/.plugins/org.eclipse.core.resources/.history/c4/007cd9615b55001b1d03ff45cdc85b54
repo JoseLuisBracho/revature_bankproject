@@ -1,0 +1,19 @@
+package com.dutybank.logic.Impl.Client.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class ClientCrudLogicImplTest {
+
+	@Test
+	void testRetreiveClient() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testViewBalance() {
+		fail("Not yet implemented");
+	}
+
+}

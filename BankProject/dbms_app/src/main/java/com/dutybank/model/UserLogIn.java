@@ -3,29 +3,39 @@ package com.dutybank.model;
 import java.util.Date;
 
 public class UserLogIn {
-	private int user_id;
+	private int login_id;
 	private String email;
 	private String password;
 	private Date creation_date;
+	private String user_type;
 	
 	public UserLogIn() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserLogIn(int user_id, String email, String password, Date creation_date) {
+	public UserLogIn(int login_id, String email, String password, Date creation_date, String user_type) {
 		super();
-		this.user_id = user_id;
+		this.login_id = login_id;
 		this.email = email;
 		this.password = password;
 		this.creation_date = creation_date;
+		this.setUser_type(user_type);
+	}
+	
+	public UserLogIn(String email, String password, Date creation_date, String user_type) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.creation_date = creation_date;
+		this.setUser_type(user_type);
 	}
 
-	public int getUser_id() {
-		return user_id;
+	public int getLogin_id() {
+		return login_id;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setLogin_id(int login_id) {
+		this.login_id = login_id;
 	}
 
 	public String getEmail() {
@@ -52,9 +62,18 @@ public class UserLogIn {
 		this.creation_date = creation_date;
 	}
 
+	public String getUser_type() {
+		return user_type;
+	}
+
+	public void setUser_type(String user_type) {
+		this.user_type = user_type;
+	}
+
 	@Override
 	public String toString() {
-		return "UserLogIn [user_id=" + user_id + ", email=" + email + ", password=" + password + ", creation_date=" + creation_date + "]";
+		return "UserLogIn [login_id=" + login_id + ", email=" + email + ", password=" + password + ", creation_date="
+				+ creation_date + ", user_type=" + user_type + "]";
 	}
 	
 	

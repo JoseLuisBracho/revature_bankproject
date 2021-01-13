@@ -1,0 +1,15 @@
+package com.dutybank.dao;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import com.dutybank.exception.BusinessException;
+import com.dutybank.model.BankAccount;
+
+public interface AccountCrudDAO {
+	
+	public BankAccount retrieveAccount(int user_id) throws BusinessException;
+	public int createAccount(BankAccount account) throws ClassNotFoundException, SQLException, BusinessException;
+	public Map<String, String> viewAnAccount(String first_name, String last_name, String legalid);
+
+}
